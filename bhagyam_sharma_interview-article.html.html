@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>साक्षात्कार — श्रीमती एस. भाग्यम शर्मा | भारतीय अनुवाद परिषद</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --purple-deep: #26215C;
+    --purple-dark: #3C3489;
+    --purple-mid: #534AB7;
+    --purple-light: #7F77DD;
+    --purple-pale: #AFA9EC;
+    --purple-wash: #CECBF6;
+    --purple-tint: #EEEDFE;
+    --amber: #FAC775;
+    --text: #1a1a2e;
+    --text-muted: #555570;
+    --border: rgba(83, 74, 183, 0.15);
+    --bg: #faf9ff;
+    --bg-card: #ffffff;
+    --radius: 12px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 16px;
+  }
+
+  /* ── Page Layout ── */
+  .page-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  /* ── Top Banner ── */
+  .top-banner {
+    text-align: center;
+    padding: 0.6rem 1rem;
+    background: var(--purple-deep);
+    color: var(--purple-wash);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-dark) 55%, var(--purple-mid) 100%);
+    border-radius: var(--radius);
+    padding: 2.5rem 2.5rem 2rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+
+  .hero-inner {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .hero-photo-wrap {
+    flex-shrink: 0;
+  }
+
+  .hero-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.35);
+    display: block;
+  }
+
+  .hero-text { flex: 1; }
+
+  .hero-tag {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--purple-pale);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-name {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    color: var(--purple-wash);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .award-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255,255,255,0.13);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 30px;
+    padding: 6px 14px;
+    font-size: 12.5px;
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+
+  .award-badge svg {
+    width: 14px; height: 14px;
+    fill: var(--amber);
+    flex-shrink: 0;
+  }
+
+  .hero-interviewer {
+    font-size: 12px;
+    color: var(--purple-pale);
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 0.6rem;
+    margin-top: 0.25rem;
+  }
+
+  /* ── Section Label ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple-mid);
+    border-bottom: 2px solid var(--purple-tint);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  /* ── Q&A ── */
+  .qa { margin-bottom: 2rem; }
+
+  .question {
+    background: var(--purple-tint);
+    border-left: 4px solid var(--purple-light);
+    padding: 0.9rem 1.1rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .q-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--purple-mid);
+    margin-bottom: 4px;
+  }
+
+  .q-text {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--purple-deep);
+    line-height: 1.65;
+  }
+
+  .answer {
+    font-size: 15.5px;
+    line-height: 1.9;
+    color: var(--text);
+    padding: 0 0.25rem;
+  }
+
+  .answer em {
+    font-style: italic;
+    color: var(--purple-mid);
+  }
+
+  .answer strong {
+    font-weight: 600;
+    color: var(--purple-deep);
+  }
+
+  /* ── Highlight Card ── */
+  .highlight-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.4rem;
+    margin: 1.5rem 0;
+  }
+
+  .highlight-card .hc-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+
+  .highlight-card .hc-value {
+    font-size: 14.5px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0.5rem 0;
+  }
+
+  /* ── Closing ── */
+  .closing {
+    background: var(--purple-tint);
+    border-radius: var(--radius);
+    padding: 2rem 2rem;
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  .closing-icon {
+    font-size: 26px;
+    margin-bottom: 0.75rem;
+  }
+
+  .closing-heading {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--purple-deep);
+    margin-bottom: 0.75rem;
+  }
+
+  .closing-text {
+    font-size: 15px;
+    color: var(--purple-dark);
+    line-height: 1.85;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 520px) {
+    .hero { padding: 2rem 1.5rem 1.75rem; }
+    .hero-inner { flex-direction: column; align-items: center; text-align: center; }
+    .hero-photo { width: 100px; height: 100px; }
+    .hero-name { font-size: 22px; }
+    .award-badge { font-size: 12px; }
+    .page-wrap { padding: 1.5rem 1rem 3rem; }
+    .closing { padding: 1.5rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-banner">भारतीय अनुवाद परिषद &nbsp;·&nbsp; Indian Translation Council</div>
+
+<div class="page-wrap">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-photo-wrap">
+        <img class="hero-photo"
+          src="data:image/jpeg;base64,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"
+          alt="श्रीमती एस. भाग्यम शर्मा" />
+      </div>
+      <div class="hero-text">
+        <div class="hero-tag">साक्षात्कार · Interview</div>
+        <div class="hero-name">श्रीमती एस. भाग्यम शर्मा</div>
+        <div class="hero-subtitle">तमिल–हिंदी अनुवादक एवं साहित्यकार, जयपुर</div>
+        <div class="award-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          डॉ. गार्गी गुप्त अनुवाद श्री सम्मान (2019–2020)
+        </div>
+        <div class="hero-interviewer">साक्षात्कारकर्ता: डॉ. राजरानी शर्मा &nbsp;|&nbsp; भारतीय अनुवाद परिषद</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section-label">अनुवाद की प्रेरणा एवं साहित्यिक यात्रा</div>
+
+  <div class="qa">
+    <div class="question">
+      <div class="q-label">प्रश्न</div>
+      <div class="q-text">महोदया आप सामान्यतः मौलिक लेखन करती रही हैं, कृपया बताएँ कि आपको अनुवाद करने की प्रेरणा कब और कैसे मिली?</div>
+    </div>
+    <div class="answer">मैं शुरू से मौलिक लेखन ही कर रही थी। सब अखबारों में अपनी कहानी भेजती और वहाँ छप रही थीं। इसी बीच राजस्थान पत्रिका के 'डेली न्यूज़' अखबार में भी कहानी छापने के लिए वहाँ के एडिटर श्री दुष्यंत जी से मैंने पूछा। उन्होंने कहा — <em>'मैं अनूदित कहानियों को प्रिफरेंस देता हूँ।'</em> तब मुझे लगा मुझे भी तमिल आती है, मैं उससे क्यों ना अनुवाद करूँ? फिर मैं एक मैगजीन में आई हुई कहानी का अनुवाद करके उन्हें भेजा। उन्हें कहानी बहुत पसंद आई। उसके बाद मैं अनुवाद करती चली गई। इसमें मूल लेखक से भी ज्यादा प्रसिद्धि और सम्मान मुझे मिला। इसके पहले राजस्थान में कोई तमिल से अनुवाद करने वाला दूसरा लेखक नहीं था।</div>
+  </div>
+
+  <div class="qa">
+    <div class="question">
+      <div class="q-label">प्रश्न</div>
+      <div class="q-text">अपनी अनूदित कृतियों में से आपको किस कृति के अनुवाद से अधिक संतोष हुआ और क्यों?</div>
+    </div>
+    <div class="answer">जैसे अपने सभी बच्चे माँ को प्यारे होते हैं वैसे ही मुझे भी अपनी सारी रचनाएँ अच्छी लगती हैं। <strong>'बंद खिड़कियाँ'</strong> उपन्यास मुझे विशेष प्रिय है क्योंकि इसमें समाज के पुराने समय का और आधुनिक समाज दोनों का चित्रण हुआ है। साथ में यह भी बताने का प्रयत्न किया है कि कितने भी पढ़े-लिखे हम हो जाएँ परंतु पितृसत्तात्मक समाज में अभी भी लड़कियों को बराबर का हक नहीं है। पुराने समय में अनपढ़ दादी को जो कठिनाई हुई थी उन्हीं कठिनाइयों का सामना उनकी पोती को करना पड़ रहा था। चूंकि दादी भुक्तभोगी थीं और उनकी सोच उच्च कोटि की थी, अतः दादी ने उसका साथ दिया। अनपढ़ होने के बाद भी वह काफी प्रैक्टिकल थीं।</div>
+  </div>
+
+  <div class="highlight-card">
+    <div class="hc-label">पुरस्कृत कृतियाँ</div>
+    <div class="hc-value">
+      <strong>'बंद खिड़कियाँ'</strong> — राजस्थान साहित्य अकादमी अनुवाद पुरस्कार &amp; तमिलनाडु नेल्ली स्पॉन्सर्ड पुरस्कार<br>
+      <strong>'झूला'</strong> (उमा जानकी रमन) — पाठकों द्वारा अत्यंत सराहित एवं पुरस्कृत
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">
+      <div class="q-label">प्रश्न</div>
+      <div class="q-text">अनूदित साहित्य तथा अनुवादक मौलिकता को रंग-बिरंगे पंख लगा देते हैं — इस संबंध में अपने विचार बताएँ।</div>
+    </div>
+    <div class="answer">हिंदी में एक उपन्यास आया था पर इतना किसी ने पसंद नहीं किया। अंग्रेज़ी में जब इसका अनुवाद हुआ, लोगों ने उसे हाथों हाथ लिया और उसे अवार्ड मिल गया। इसी को कहते हैं — मौलिकता के रंग-बिरंगे पंख लगा दिए।</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Section 2 -->
+  <div class="section-label">अनुवाद के सिद्धांत एवं दर्शन</div>
+
+  <div class="qa">
+    <div class="question">
+      <div class="q-label">प्रश्न</div>
+      <div class="q-text">अनुवाद के विभिन्न सिद्धांतों की विद्वानों ने चर्चा की है — आप किस सिद्धांत से अधिक सहमत हैं?</div>
+    </div>
+    <div class="answer">विद्वानों ने अनुवाद के लिए बहुत से सिद्धांत बताए हैं। उन सब को एक साथ लेकर चलना अनुवादक के लिए असंभव है। <strong>'भावना'</strong> बहुत जरूरी है — किस अर्थ में कह रहे हैं, किस संदर्भ में कह रहे हैं, यह समझना बहुत जरूरी है। अनुवाद की तीन बुनियादी अवधारणाएँ हैं: (1) स्रोत भाषा को अच्छी तरह से समझना, (2) लक्ष्य भाषा को भी अच्छी तरह समझना, और (3) विषय वस्तु का ज्ञान होना।</div>
+  </div>
+
+  <div class="qa">
+    <div class="question">
+      <div class="q-label">प्रश्न</div>
+      <div class="q-text">शब्दानुवाद और भावानुवाद में से आप किसे प्राथमिकता देती हैं?</div>
+    </div>
+    <div class="answer">शब्दानुवाद और भावानुवाद को एकदम अलग-अलग नहीं कर सकते। <strong>भावानुवाद ज्यादा जरूरी है।</strong> अनुवाद एक कला ही नहीं अपितु एक विज्ञान भी है। अनुवादक इस मामले में एक वैज्ञानिक ही हुआ।</div>
+  </div>
+
+  <div class="qa">
+    <div class="question">
+      <div class="q-label">प्रश्न</div>
+      <div class="q-text">क्या अनुवाद मौलिक लेखन से भी अधिक आनंदप्रद तथा संतोषप्रद होता है?</div>
+    </div>
+    <div class="answer">बिल्कुल — अनुवाद कई बार मौलिक लेखन से भी अधिक आनंदप्रद और आत्मसंतोषप्रद होता है। मेरे लिए तो है ही। क्योंकि हमें दूसरी भाषा के बारे में समझने और जानने की क्षमता बढ़ती है। इसके साथ हमारा लेखन भी होता है और हमारे ज्ञान में वृद्धि भी होती है।</div>
+  </div>
+
+  <div class="qa">
+    <div class="question">
+      <div class="q-label">प्रश्न</div>
+      <div class="q-text">अनुवाद में कुछ छोड़ने या कुछ जोड़ने के विषय में आपका मत क्या है?</div>
+    </div>
+    <div class="answer">छोड़ना तो सिर्फ मजबूरी है, जोड़ना भी सही नहीं है — परंतु बात को स्पष्ट करने के लिए कई बार हमें ऐसा करना पड़ता है।</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Section 3 -->
+  <div class="section-label">भाषा, संस्कृति एवं राष्ट्रीय एकता</div>
+
+  <div class="qa">
+    <div class="question">
+      <div class="q-label">प्रश्न</div>
+      <div class="q-text">21वीं सदी को अनुवाद की सदी कहा जाता है — इसमें क्या-क्या संभावनाएँ हैं?</div>
+    </div>
+    <div class="answer">बिना अनुवाद किए हम दुनिया की दूसरी भाषाओं को समझ नहीं सकते। अनुवाद के कारण ही इतने बड़े संसार को हम छोटे रूप में देखते हैं। तमिल साहित्य बहुत पुराना साहित्य है — हमारी भारतीय संस्कृति का सार है। सभी भाषाएँ सीखना संभव नहीं, इसीलिए अनुवाद अनिवार्य है।</div>
+  </div>
+
+  <div class="qa">
+    <div class="question">
+      <div class="q-label">प्रश्न</div>
+      <div class="q-text">राष्ट्रीय एकता एवं हिंदी भाषा की समृद्धि में अनुवाद का क्या अवदान है?</div>
+    </div>
+    <div class="answer">राष्ट्रीय एकता तथा हिंदी भाषा की समृद्धि में अनुवाद का बहुत बड़ा हाथ है। अंग्रेज़ी राज के समय — क्या उत्तर, क्या दक्षिण, क्या पूर्व, क्या पश्चिम — सब एक ही हो गए थे। गुलामी से छुटकारा पाने और उसके बाद हमारी एकता बनाए रखने में अनुवाद ने, खासतौर से हिंदी ने, विशेष भूमिका निभाई।</div>
+  </div>
+
+  <div class="qa">
+    <div class="question">
+      <div class="q-label">प्रश्न</div>
+      <div class="q-text">अनुवाद करते समय आपको किसी विशिष्ट भाषाई चुनौती का अनुभव हुआ हो?</div>
+    </div>
+    <div class="answer">तमिल भाषा में 'ख, घ, ब, भ' जैसे कई शब्द नहीं हैं। उदाहरण के लिए मेरा नाम <strong>भाग्यम</strong> है — तमिल में यह <strong>पाकियम</strong> हो जाता है। इसीलिए दोनों भाषाओं को अच्छी तरह जानना ज़रूरी है।</div>
+  </div>
+
+  <div class="qa">
+    <div class="question">
+      <div class="q-label">प्रश्न</div>
+      <div class="q-text">क्या भारतीय साहित्य में परस्पर अनुवाद की माँग बढ़ी है?</div>
+    </div>
+    <div class="answer">बिल्कुल — 100% भारतीय साहित्य में परस्पर अनुवाद की माँग बढ़ी है। यह साहित्य की दृष्टि से बहुत ही सुखद स्थिति है।</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Section 4 -->
+  <div class="section-label">भारतीय अनुवाद परिषद एवं सम्मान</div>
+
+  <div class="qa">
+    <div class="question">
+      <div class="q-label">प्रश्न</div>
+      <div class="q-text">भारतीय अनुवाद परिषद के पुरस्कार प्रयास के बारे में आपके विचार?</div>
+    </div>
+    <div class="answer">यह छोटा नहीं, <strong>बहुत बड़ा सराहनीय प्रयास है।</strong> आप लोगों की वजह से ही आज अनुवाद को इतना महत्व मिला। जब आपका फ़ोन आया कि <em>'आपने बहुत काम किया है'</em> — मैं बहुत प्रसन्न हुई। भले ही मुझे पुरस्कार नहीं मिलता परंतु कोई मुझे इतना सम्मान दे रहा है, यह सोचकर मुझे बहुत खुशी हुई।</div>
+  </div>
+
+  <div class="qa">
+    <div class="question">
+      <div class="q-label">प्रश्न</div>
+      <div class="q-text">क्या अनुवादक बनने में अनुवाद डिप्लोमा या उपाधि की कुछ भूमिका होती है?</div>
+    </div>
+    <div class="answer">मैंने तो कोई डिग्री या डिप्लोमा नहीं लिया। यदि लिया होता तो निश्चित रूप से फ़ायदा होता — जिन कठिनाइयों का मैंने सामना किया वह नहीं करना पड़ता। मैंने सर्विस से रिटायर होने के बाद 65 साल की उम्र में लिखना शुरू किया, उसके दो साल बाद अनुवाद करना शुरू किया — और मुझे अनुवाद के कई सम्मान और पुरस्कार मिल चुके हैं।</div>
+  </div>
+
+  <div class="qa">
+    <div class="question">
+      <div class="q-label">प्रश्न</div>
+      <div class="q-text">विश्वविद्यालयी शिक्षा में अनुवाद का शिक्षण-प्रशिक्षण अनिवार्य होना चाहिए?</div>
+    </div>
+    <div class="answer">विश्वविद्यालय शिक्षा में अनुवाद का शिक्षण-प्रशिक्षण अनिवार्य होना चाहिए क्योंकि इससे व्यावसायिक क्षेत्र में बहुत लाभ होगा। अनुवाद प्रशिक्षण पाठ्यक्रम का बहुत महत्व है — अनुवाद संबंधी सभी सिद्धांत और व्यावहारिक कठिनाइयाँ दोनों को इसमें समाहित करना चाहिए।</div>
+  </div>
+
+  <!-- Closing -->
+  <div class="closing">
+    <div class="closing-icon">✦</div>
+    <div class="closing-heading">अनुवादकों के लिए संदेश</div>
+    <div class="closing-text">अनुवाद करने के पहले दोनों भाषाओं का अच्छी तरह से ज्ञान प्राप्त कर लें। वहाँ की संस्कृति व भौगोलिकता के बारे में भी जानकारी होना ज़रूरी है — तभी हम ठीक से अनुवाद कर पाएँगे।</div>
+  </div>
+
+  <div class="footer">
+    &copy; भारतीय अनुवाद परिषद &nbsp;|&nbsp; Indian Translation Council &nbsp;|&nbsp; साक्षात्कारकर्ता: डॉ. राजरानी शर्मा
+  </div>
+
+</div><!-- /page-wrap -->
+</body>
+</html>

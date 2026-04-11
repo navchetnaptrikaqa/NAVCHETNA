@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>नवचेतना अंतर्राष्ट्रीय पत्रिका – क़तर</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Yatra+One&family=Hind:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --slate:#6B7A8D;--slate-light:#E8ECF0;--slate-mid:#C4CDD7;
+  --white:#FFFFFF;--off-white:#F7F8FA;
+  --pastel-rose:#F2E8E8;--pastel-blue:#E8EFF7;--pastel-sage:#E8F0EC;
+  --pastel-gold:#F5F0E0;--pastel-lav:#EDE8F5;
+  --accent:#8C6D4F;--accent2:#4F7A8C;
+  --text-dark:#2C3542;--text-mid:#5A6478;--text-light:#8E99AB;
+  --border:#D8DDE5;--gold-ornate:#B8956A;
+  --shadow:0 2px 16px rgba(107,122,141,0.10);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Hind','Tiro Devanagari Hindi',serif;background:var(--off-white);color:var(--text-dark);line-height:1.7;}
+.page{display:none;animation:fadeIn 0.4s ease;}
+.page.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.ornate-border{height:6px;background:repeating-linear-gradient(90deg,var(--gold-ornate) 0px,var(--gold-ornate) 6px,var(--slate-mid) 6px,var(--slate-mid) 12px,var(--pastel-rose) 12px,var(--pastel-rose) 18px,var(--slate-mid) 18px,var(--slate-mid) 24px);}
+.topbar{background:var(--slate);color:#E8ECF0;font-size:11.5px;padding:7px 2rem;display:flex;justify-content:space-between;align-items:center;font-family:'Hind',sans-serif;letter-spacing:0.04em;}
+.topbar a{color:var(--slate-light);text-decoration:none;margin-left:14px;font-size:11px;transition:color 0.2s;}
+.topbar a:hover{color:#fff;}
+header{background:var(--white);border-bottom:1px solid var(--border);padding:1.6rem 2rem 1rem;position:relative;overflow:hidden;}
+header::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:var(--pastel-lav);opacity:0.5;}
+header::after{content:'';position:absolute;bottom:-80px;left:-40px;width:200px;height:200px;border-radius:50%;background:var(--pastel-sage);opacity:0.4;}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1;}
+.logo-wrap{display:flex;align-items:center;gap:1.2rem;}
+.masthead-text .name-hi{font-family:'Noto Serif Devanagari',serif;font-size:clamp(1.5rem,3.5vw,2.4rem);font-weight:700;color:var(--text-dark);line-height:1.1;letter-spacing:0.02em;}
+.masthead-text .name-en{font-size:10.5px;color:var(--slate);letter-spacing:0.18em;font-family:'Hind',sans-serif;font-weight:500;margin-top:2px;}
+.masthead-text .sub{font-size:11px;color:var(--gold-ornate);letter-spacing:0.1em;font-family:'Hind',sans-serif;margin-top:1px;}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;}
+.editor-info{text-align:right;}
+.editor-info .lbl{font-size:10px;color:var(--text-light);letter-spacing:0.08em;}
+.editor-info .main-name{font-size:13px;font-weight:600;color:var(--text-dark);font-family:'Noto Serif Devanagari',serif;}
+.editor-info .sub-line{font-size:11px;color:var(--text-mid);font-family:'Hind',sans-serif;margin-top:1px;}
+.editor-info .sub-line2{font-size:10.5px;color:var(--text-light);font-family:'Hind',sans-serif;margin-top:1px;}
+.header-btns{display:flex;gap:8px;}
+.btn-primary{background:var(--accent);color:#fff;border:none;padding:8px 18px;border-radius:20px;font-size:12.5px;font-family:'Hind',sans-serif;font-weight:600;cursor:pointer;transition:background 0.2s,transform 0.15s;}
+.btn-primary:hover{background:#7A5C3E;transform:translateY(-1px);}
+.btn-outline{background:transparent;color:var(--accent2);border:1.5px solid var(--accent2);padding:7px 16px;border-radius:20px;font-size:12px;font-family:'Hind',sans-serif;font-weight:500;cursor:pointer;transition:all 0.2s;}
+.btn-outline:hover{background:var(--accent2);color:#fff;}
+nav{background:var(--white);border-bottom:2px solid var(--slate-light);position:sticky;top:0;z-index:100;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;overflow-x:auto;}
+nav a{color:var(--text-mid);text-decoration:none;font-size:12.5px;font-family:'Hind',sans-serif;font-weight:500;padding:13px 17px;white-space:nowrap;border-bottom:3px solid transparent;transition:all 0.2s;cursor:pointer;letter-spacing:0.03em;}
+nav a:hover,nav a.active{color:var(--accent);border-bottom-color:var(--gold-ornate);background:var(--pastel-gold);}
+
+/* HOME */
+.hero{max-width:1200px;margin:2rem auto;padding:0 2rem;display:grid;grid-template-columns:1.5fr 1fr;gap:1.5rem;}
+.hero-main{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:transform 0.2s;}
+.hero-main:hover{transform:translateY(-3px);}
+.hero-img-placeholder{height:220px;background:linear-gradient(135deg,var(--pastel-lav) 0%,var(--pastel-blue) 50%,var(--pastel-rose) 100%);display:flex;align-items:center;justify-content:center;font-family:'Yatra One',serif;font-size:4rem;color:var(--accent);position:relative;}
+.hero-img-placeholder::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 5 L55 55 L5 55 Z' fill='none' stroke='rgba(184,149,106,0.1)' stroke-width='1'/%3E%3C/svg%3E") repeat;}
+.hero-body{padding:1.4rem 1.6rem 1.6rem;}
+.hero-tag{display:inline-block;background:var(--pastel-gold);color:var(--accent);font-size:10px;font-weight:600;padding:3px 12px;border-radius:12px;letter-spacing:0.1em;margin-bottom:10px;border:1px solid #E0D0B0;}
+.hero-body h2{font-family:'Noto Serif Devanagari',serif;font-size:1.35rem;color:var(--text-dark);line-height:1.4;margin-bottom:8px;}
+.hero-body p{font-size:13px;color:var(--text-mid);line-height:1.65;}
+.hero-body .author{font-size:11.5px;color:var(--text-light);margin-top:12px;}
+.hero-side{display:flex;flex-direction:column;gap:1rem;}
+.side-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1rem 1.2rem;display:flex;gap:1rem;align-items:flex-start;cursor:pointer;transition:box-shadow 0.2s,border-color 0.2s;box-shadow:var(--shadow);}
+.side-card:hover{border-color:var(--gold-ornate);box-shadow:0 4px 20px rgba(184,149,106,0.15);}
+.side-icon{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.side-card h3{font-family:'Tiro Devanagari Hindi',serif;font-size:0.9rem;line-height:1.4;color:var(--text-dark);margin-bottom:4px;}
+.side-card .stag{font-size:10px;color:var(--accent2);font-weight:600;letter-spacing:0.08em;margin-bottom:4px;}
+.side-card p{font-size:11.5px;color:var(--text-mid);}
+.sec-header{max-width:1200px;margin:2.5rem auto 1rem;padding:0 2rem;display:flex;align-items:center;gap:1rem;}
+.sec-header h2{font-family:'Noto Serif Devanagari',serif;font-size:1.1rem;color:var(--text-dark);white-space:nowrap;display:flex;align-items:center;gap:8px;}
+.sec-header h2::before{content:'❧';color:var(--gold-ornate);font-size:1rem;}
+.sec-header::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
+.sec-header a{font-size:12px;color:var(--accent2);text-decoration:none;white-space:nowrap;}
+.article-grid{max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.2rem;}
+.art-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;box-shadow:var(--shadow);}
+.art-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(107,122,141,0.15);}
+.art-thumb{height:120px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+.art-body{padding:1rem 1.1rem 1.2rem;}
+.art-cat{font-size:10px;font-weight:600;letter-spacing:0.1em;color:var(--accent2);margin-bottom:5px;}
+.art-title{font-family:'Tiro Devanagari Hindi',serif;font-size:0.92rem;line-height:1.45;color:var(--text-dark);margin-bottom:6px;}
+.art-excerpt{font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:8px;}
+.art-meta{font-size:10.5px;color:var(--text-light);display:flex;justify-content:space-between;}
+.bg-rose{background:var(--pastel-rose);}
+.bg-blue{background:var(--pastel-blue);}
+.bg-sage{background:var(--pastel-sage);}
+.bg-gold{background:var(--pastel-gold);}
+.bg-lav{background:var(--pastel-lav);}
+
+/* EDITOR STRIP */
+.editor-strip{background:linear-gradient(135deg,var(--pastel-lav),var(--pastel-blue));margin:2.5rem 0;padding:2.5rem 2rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.editor-inner{max-width:1200px;margin:0 auto;display:flex;gap:2rem;align-items:flex-start;}
+.editor-avatar{width:90px;height:90px;border-radius:50%;background:var(--white);border:3px solid var(--gold-ornate);display:flex;align-items:center;justify-content:center;font-family:'Noto Serif Devanagari',serif;font-size:2rem;color:var(--accent);flex-shrink:0;box-shadow:0 4px 16px rgba(184,149,106,0.2);margin-top:4px;}
+.editor-quote{flex:1;}
+.editor-quote .qt{font-family:'Tiro Devanagari Hindi',serif;font-size:1.05rem;color:var(--text-dark);line-height:1.65;font-style:italic;}
+.editor-quote .qt::before{content:'❝ ';color:var(--gold-ornate);font-size:1.4rem;line-height:0;vertical-align:-0.2em;}
+.editor-quote .qt::after{content:' ❞';color:var(--gold-ornate);font-size:1.4rem;line-height:0;vertical-align:-0.2em;}
+.sig-block{margin-top:14px;padding-top:12px;border-top:1px solid rgba(184,149,106,0.25);}
+.sig-block .sig-main{font-size:13px;font-weight:600;color:var(--text-dark);margin-bottom:4px;}
+.sig-block .sig-row{font-size:11.5px;color:var(--text-mid);margin-bottom:2px;}
+.sig-block .sig-row strong{color:var(--text-dark);}
+
+/* TWO COL */
+.two-col{max-width:1200px;margin:0 auto 2rem;padding:0 2rem;display:grid;grid-template-columns:1fr 300px;gap:1.8rem;}
+.opinion-list{display:flex;flex-direction:column;gap:1rem;}
+.op-item{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1rem 1.2rem;display:flex;gap:1rem;cursor:pointer;transition:border-color 0.2s;}
+.op-item:hover{border-color:var(--gold-ornate);}
+.op-av{width:46px;height:46px;border-radius:50%;background:var(--pastel-rose);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Noto Serif Devanagari',serif;font-size:1.1rem;color:var(--accent);flex-shrink:0;}
+.op-name{font-size:12px;font-weight:600;color:var(--text-dark);}
+.op-role{font-size:10px;color:var(--text-light);margin-bottom:3px;}
+.op-title{font-family:'Tiro Devanagari Hindi',serif;font-size:0.9rem;color:var(--text-dark);line-height:1.4;}
+.sidebar-block{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.2rem;margin-bottom:1.2rem;box-shadow:var(--shadow);}
+.sidebar-block h3{font-family:'Noto Serif Devanagari',serif;font-size:0.95rem;color:var(--accent);margin-bottom:1rem;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.newsletter{background:linear-gradient(135deg,var(--pastel-gold),#FDF5E0);border:1px solid #E0D0A0;border-radius:10px;padding:1.3rem;margin-bottom:1.2rem;text-align:center;}
+.newsletter h3{font-family:'Yatra One',serif;color:var(--accent);font-size:1rem;margin-bottom:6px;}
+.newsletter p{font-size:11.5px;color:var(--text-mid);margin-bottom:12px;}
+.newsletter input{width:100%;border:1px solid var(--border);border-radius:20px;padding:8px 14px;font-size:12.5px;font-family:'Hind',sans-serif;background:#fff;color:var(--text-dark);outline:none;margin-bottom:8px;}
+.newsletter input:focus{border-color:var(--gold-ornate);}
+.newsletter button{width:100%;background:var(--accent);color:#fff;border:none;border-radius:20px;padding:9px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:'Hind',sans-serif;transition:background 0.2s;}
+.newsletter button:hover{background:#7A5C3E;}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:5px;}
+.tag{background:var(--slate-light);border:1px solid var(--border);border-radius:12px;font-size:11px;color:var(--text-mid);padding:4px 12px;cursor:pointer;transition:all 0.2s;font-family:'Hind',sans-serif;}
+.tag:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+
+/* ARCHIVE */
+#page-archive{padding-bottom:3rem;}
+.archive-hero{background:linear-gradient(135deg,var(--pastel-lav) 0%,var(--pastel-blue) 60%,var(--pastel-sage) 100%);padding:3rem 2rem 2.5rem;text-align:center;border-bottom:1px solid var(--border);}
+.archive-hero h1{font-family:'Noto Serif Devanagari',serif;font-size:clamp(1.6rem,4vw,2.4rem);color:var(--text-dark);margin-bottom:8px;}
+.archive-hero p{font-size:13.5px;color:var(--text-mid);max-width:560px;margin:0 auto 1.2rem;}
+.archive-stats{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:1rem;}
+.stat-pill{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:6px 20px;font-size:12.5px;font-weight:600;color:var(--text-dark);font-family:'Hind',sans-serif;}
+.stat-pill span{color:var(--accent);font-size:1rem;}
+.year-tabs{max-width:1100px;margin:2rem auto 0;padding:0 2rem;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;}
+.ytab{padding:8px 22px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);font-size:13px;font-weight:600;color:var(--text-mid);cursor:pointer;transition:all 0.2s;font-family:'Hind',sans-serif;}
+.ytab:hover{border-color:var(--accent);color:var(--accent);}
+.ytab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+.year-section{max-width:1100px;margin:1.8rem auto;padding:0 2rem;display:none;}
+.year-section.visible{display:block;}
+.year-section h2{font-family:'Noto Serif Devanagari',serif;font-size:1.3rem;color:var(--text-dark);margin-bottom:1.2rem;padding-bottom:10px;border-bottom:2px solid var(--pastel-gold);display:flex;align-items:center;gap:10px;}
+.yr-badge{background:var(--accent);color:#fff;font-size:11px;font-family:'Hind',sans-serif;padding:3px 12px;border-radius:12px;font-weight:600;}
+.issues-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.2rem;}
+.issue-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.2s,box-shadow 0.2s;}
+.issue-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(107,122,141,0.15);}
+.issue-cover{height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.cover-num{font-family:'Yatra One',serif;font-size:4rem;color:rgba(255,255,255,0.22);position:absolute;bottom:-14px;right:8px;line-height:1;}
+.cover-label{font-family:'Noto Serif Devanagari',serif;font-size:1rem;color:var(--text-dark);text-align:center;line-height:1.4;position:relative;z-index:1;padding:0 1rem;}
+.cover-season{font-size:11px;color:var(--text-mid);margin-top:4px;position:relative;z-index:1;font-family:'Hind',sans-serif;letter-spacing:0.06em;}
+.issue-info{padding:1rem 1.1rem 1.2rem;}
+.issue-info h4{font-family:'Tiro Devanagari Hindi',serif;font-size:0.9rem;color:var(--text-dark);margin-bottom:5px;line-height:1.4;}
+.issue-meta{font-size:11px;color:var(--text-light);margin-bottom:8px;}
+.pdf-status{font-size:11px;margin-bottom:10px;padding:5px 10px;border-radius:6px;font-family:'Hind',sans-serif;}
+.pdf-status.available{background:#EAF5EE;color:#2E7D4F;border:1px solid #B8DFC8;}
+.pdf-status.missing{background:#FEF3E2;color:#8C6D1F;border:1px solid #E8D4A0;display:flex;flex-direction:column;gap:3px;}
+.pdf-status.missing code{font-size:10px;background:rgba(0,0,0,0.06);padding:2px 5px;border-radius:3px;}
+.issue-actions{display:flex;gap:6px;}
+.btn-dl{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;background:var(--accent2);color:#fff;border:none;border-radius:8px;padding:8px 10px;font-size:12.5px;font-family:'Hind',sans-serif;font-weight:600;cursor:pointer;transition:background 0.2s;text-decoration:none;}
+.btn-dl:hover{background:#3D6678;}
+.btn-view{display:flex;align-items:center;justify-content:center;background:var(--slate-light);color:var(--text-mid);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:12px;font-family:'Hind',sans-serif;font-weight:500;cursor:pointer;transition:all 0.2s;text-decoration:none;}
+.btn-view:hover{background:var(--pastel-gold);border-color:var(--gold-ornate);}
+.badge-soon{background:var(--pastel-sage);color:#3A6B50;border:1px solid #B0D4BC;border-radius:8px;padding:7px 10px;font-size:11.5px;font-family:'Hind',sans-serif;font-weight:500;text-align:center;}
+.guide-box{max-width:1100px;margin:2rem auto 0;padding:0 2rem;}
+.guide-inner{background:linear-gradient(135deg,var(--pastel-gold),#FDF5E0);border:1px solid #E0D0A0;border-radius:12px;padding:1.5rem 2rem;}
+.guide-inner h3{font-family:'Noto Serif Devanagari',serif;font-size:1.05rem;color:var(--accent);margin-bottom:1rem;}
+.guide-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;}
+.guide-step{background:rgba(255,255,255,0.7);border-radius:8px;padding:1rem;border:1px solid #E0D0A0;}
+.guide-step .step-num{font-family:'Yatra One',serif;font-size:1.5rem;color:var(--gold-ornate);line-height:1;margin-bottom:4px;}
+.guide-step p{font-size:12.5px;color:var(--text-mid);line-height:1.6;}
+.guide-step code{background:#F0E8D8;padding:2px 7px;border-radius:4px;font-size:11px;color:var(--accent);font-family:'Courier New',monospace;display:inline-block;margin-top:4px;}
+
+/* ABOUT */
+#page-about{padding-bottom:3rem;}
+.about-wrap{max-width:900px;margin:2.5rem auto;padding:0 2rem;}
+.about-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:2.5rem;box-shadow:var(--shadow);margin-bottom:1.5rem;}
+.about-card h2{font-family:'Noto Serif Devanagari',serif;font-size:1.3rem;color:var(--accent);margin-bottom:1rem;}
+.about-card p{font-size:13.5px;color:var(--text-mid);line-height:1.8;margin-bottom:10px;}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:1rem;margin-top:1.2rem;}
+.team-card{background:var(--off-white);border:1px solid var(--border);border-radius:10px;padding:1.2rem;text-align:center;transition:box-shadow 0.2s;}
+.team-card:hover{box-shadow:var(--shadow);}
+.team-av{width:58px;height:58px;border-radius:50%;background:var(--pastel-lav);border:2px solid var(--gold-ornate);display:flex;align-items:center;justify-content:center;font-family:'Noto Serif Devanagari',serif;font-size:1.3rem;color:var(--accent);margin:0 auto 10px;}
+.team-name{font-size:12.5px;font-weight:600;color:var(--text-dark);margin-bottom:3px;font-family:'Hind',sans-serif;}
+.team-role{font-size:11px;color:var(--text-mid);}
+.team-summary{margin-top:1.5rem;background:var(--off-white);border:1px solid var(--border);border-radius:10px;padding:1rem 1.4rem;}
+.tsrow{display:flex;flex-wrap:wrap;gap:1.5rem;font-size:12.5px;}
+.tsrow > div{min-width:160px;}
+.tsrow strong{color:var(--accent);display:block;margin-bottom:2px;font-size:11px;letter-spacing:0.06em;}
+
+/* FOOTER */
+footer{background:var(--text-dark);color:#9AABB8;padding:3rem 2rem 1.5rem;margin-top:3rem;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem;}
+.footer-brand h2{font-family:'Yatra One',serif;font-size:1.5rem;color:#EEF1F5;margin-bottom:8px;}
+.footer-brand p{font-size:11.5px;color:#6A7A8A;line-height:1.85;margin:0;}
+.footer-brand p strong{color:#D4B896;}
+.footer-col h4{font-size:10.5px;font-weight:600;letter-spacing:0.12em;color:var(--gold-ornate);margin-bottom:12px;}
+.footer-col a{display:block;color:#6A7A8A;text-decoration:none;font-size:12.5px;margin-bottom:7px;font-family:'Hind',sans-serif;transition:color 0.2s;cursor:pointer;}
+.footer-col a:hover{color:#EEF1F5;}
+.footer-bottom{border-top:1px solid #3A4550;padding-top:1.2rem;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#3A4550;flex-wrap:wrap;gap:8px;}
+@media(max-width:768px){
+  .header-inner{flex-direction:column;gap:1rem;text-align:center;}
+  .logo-wrap{justify-content:center;}
+  .header-right{align-items:center;}
+  .hero{grid-template-columns:1fr;}
+  .two-col{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .editor-inner{flex-direction:column;align-items:center;text-align:center;}
+}
+@media(max-width:480px){.footer-top{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="ornate-border"></div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span>📍 क़तर से प्रकाशित &nbsp;|&nbsp; त्रैमासिक पत्रिका &nbsp;|&nbsp; वर्ष ७, अंक १ — जनवरी-मार्च २०२६</span>
+  <div><a href="#">English</a><a href="#">عربي</a><a href="#">संपर्क</a></div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <svg width="82" height="82" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="37" fill="none" stroke="#B8956A" stroke-width="1.2"/>
+        <circle cx="40" cy="40" r="33" fill="none" stroke="#B8956A" stroke-width="0.5" stroke-dasharray="3 2"/>
+        <g opacity="0.55">
+          <ellipse cx="40" cy="8" rx="3.5" ry="6" fill="#B8956A" transform="rotate(0 40 40)"/>
+          <ellipse cx="40" cy="8" rx="3.5" ry="6" fill="#B8956A" transform="rotate(45 40 40)"/>
+          <ellipse cx="40" cy="8" rx="3.5" ry="6" fill="#B8956A" transform="rotate(90 40 40)"/>
+          <ellipse cx="40" cy="8" rx="3.5" ry="6" fill="#B8956A" transform="rotate(135 40 40)"/>
+          <ellipse cx="40" cy="8" rx="3.5" ry="6" fill="#B8956A" transform="rotate(180 40 40)"/>
+          <ellipse cx="40" cy="8" rx="3.5" ry="6" fill="#B8956A" transform="rotate(225 40 40)"/>
+          <ellipse cx="40" cy="8" rx="3.5" ry="6" fill="#B8956A" transform="rotate(270 40 40)"/>
+          <ellipse cx="40" cy="8" rx="3.5" ry="6" fill="#B8956A" transform="rotate(315 40 40)"/>
+        </g>
+        <circle cx="40" cy="40" r="26" fill="#F7F3EE"/>
+        <circle cx="40" cy="40" r="24" fill="none" stroke="#B8956A" stroke-width="0.8"/>
+        <polygon points="40,17 42,20 40,23 38,20" fill="#B8956A" opacity="0.7"/>
+        <polygon points="40,57 42,60 40,63 38,60" fill="#B8956A" opacity="0.7"/>
+        <polygon points="17,40 20,42 23,40 20,38" fill="#B8956A" opacity="0.7"/>
+        <polygon points="57,40 60,42 63,40 60,38" fill="#B8956A" opacity="0.7"/>
+        <text x="40" y="48" text-anchor="middle" font-family="'Noto Serif Devanagari',serif" font-size="20" font-weight="700" fill="#4F3A28">न</text>
+      </svg>
+      <div class="masthead-text">
+        <div class="name-hi">नवचेतना</div>
+        <div class="name-en">NAVACHETNA INTERNATIONAL PATRIKA · QATAR</div>
+        <div class="sub">✦ क़तर से प्रकाशित ✦ स्थापना २०१९ ✦ त्रैमासिक ✦</div>
+      </div>
+    </div>
+
+    <!-- HEADER RIGHT — पूरी टीम -->
+    <div class="header-right">
+      <div class="editor-info">
+        <div class="lbl">मुख्य संपादक</div>
+        <div class="main-name">श्रीमती शालिनी वर्मा</div>
+      </div>
+      <div class="header-btns">
+        <button class="btn-primary" onclick="showPage('archive')">📁 पुराने अंक</button>
+        <button class="btn-outline" onclick="showPage('about')">हमारे बारे में</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a onclick="showPage('home')" id="nav-home" class="active">मुख्य पृष्ठ</a>
+    <a onclick="showPage('archive')" id="nav-archive">📁 पुराने अंक</a>
+    <a>साहित्य</a><a>संस्कृति</a><a>प्रवासी मंच</a>
+    <a>विचार</a><a>क़तर डायरी</a><a>महिला जगत</a><a>युवा</a>
+    <a onclick="showPage('about')" id="nav-about">हमारे बारे में</a>
+  </div>
+</nav>
+
+<!-- ══ HOME PAGE ══ -->
+<div id="page-home" class="page active">
+  <div class="hero">
+    <div class="hero-main">
+      <div class="hero-img-placeholder bg-lav">✍️</div>
+      <div class="hero-body">
+        <span class="hero-tag">मुख्य लेख</span>
+        <h2>प्रवासी भारतीयों की आवाज़: क़तर में हिंदी साहित्य का नया अध्याय</h2>
+        <p>जब घर से हज़ारों मील दूर, रेगिस्तान की रेत पर हिंदी के शब्द खिलते हैं — तो जन्म होता है एक अनोखी साहित्यिक संस्कृति का। नवचेतना के सात वर्षों की यात्रा।</p>
+        <div class="author">✍️ शालिनी वर्मा, मुख्य संपादक &nbsp;|&nbsp; जनवरी-मार्च २०२६</div>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="side-card"><div class="side-icon bg-rose">🌹</div><div><div class="stag">काव्य</div><h3>क़तर की मिट्टी में भारत की खुशबू</h3><p>प्रवासी कवियों की अनुभूतियाँ</p></div></div>
+      <div class="side-card"><div class="side-icon bg-blue">🌙</div><div><div class="stag">संस्कृति</div><h3>रमज़ान और दीवाली: दो संस्कृतियों का मिलन</h3><p>क़तर में भारतीय-अरब सांस्कृतिक संगम</p></div></div>
+      <div class="side-card"><div class="side-icon bg-sage">📚</div><div><div class="stag">शिक्षा</div><h3>विदेश में बच्चों को हिंदी सिखाना: एक चुनौती</h3><p>प्रवासी माताओं के अनुभव</p></div></div>
+    </div>
+  </div>
+
+  <div class="sec-header"><h2>जनवरी–मार्च २०२६ अंक से</h2><a href="#">सभी देखें →</a></div>
+  <div class="article-grid">
+    <div class="art-card" onclick="window.location.href='joote-article.html'" style="cursor:pointer;border:2px solid var(--gold-ornate);"><div class="art-thumb bg-lav">👞</div><div class="art-body"><div class="art-cat" style="color:var(--accent);font-weight:700;">✨ नया · साहित्य</div><div class="art-title">जूते</div><div class="art-excerpt">फर्श पर टक-टक करते बाबूजी के जूते मूक चहारदिवारी में एकमात्र जीवंत प्राणी थे...</div><div class="art-meta"><span>तिवारी अनुराग प्रेमचंद</span><span>8 मि॰</span></div></div></div>
+    <div class="art-card" onclick="window.location.href='andhere-surang.html'" style="cursor:pointer;border:2px solid var(--gold-ornate);"><div class="art-thumb bg-sage">💪</div><div class="art-body"><div class="art-cat" style="color:var(--accent);font-weight:700;">✨ नया · जीवन संघर्ष</div><div class="art-title">अंधेरी सुरंग से बाहर आने तक</div><div class="art-excerpt">पति की किडनी खराब होने के बाद एक पत्नी की अदम्य साहस की कहानी...</div><div class="art-meta"><span>डॉ. अलका अग्रवाल</span><span>10 मि॰</span></div></div></div>
+    <div class="art-card" onclick="window.location.href='bhagyam_sharma_interview.html'" style="cursor:pointer;border:2px solid var(--gold-ornate);"><div class="art-thumb bg-gold">🎤</div><div class="art-body"><div class="art-cat" style="color:var(--accent);font-weight:700;">✨ नया · साक्षात्कार</div><div class="art-title">साक्षात्कार — श्रीमती एस. भाग्यम शर्मा</div><div class="art-excerpt">भारतीय अनुवाद परिषद की प्रतिष्ठित साहित्यकार से विशेष बातचीत — तमिल से हिंदी अनुवाद की अनूठी यात्रा...</div><div class="art-meta"><span>भारतीय अनुवाद परिषद</span><span>12 मि॰</span></div></div></div>
+    <div class="art-card"><div class="art-thumb bg-rose">🎭</div><div class="art-body"><div class="art-cat">साहित्य</div><div class="art-title">मुंशी प्रेमचंद की गोदान: आज के प्रवासी जीवन का दर्पण</div><div class="art-excerpt">सौ साल पुरानी कहानी, आज भी उतनी ही प्रासंगिक...</div><div class="art-meta"><span>डॉ. अनीता मिश्रा</span><span>6 मि॰</span></div></div></div>
+    <div class="art-card"><div class="art-thumb bg-blue">🕌</div><div class="art-body"><div class="art-cat">क़तर डायरी</div><div class="art-title">दोहा की सड़कों पर हिंदी: एक खोज यात्रा</div><div class="art-excerpt">जब दोहा मेट्रो में किसी ने हिंदी में पूछा...</div><div class="art-meta"><span>विकास चौधरी</span><span>5 मि॰</span></div></div></div>
+    <div class="art-card"><div class="art-thumb bg-gold">👩</div><div class="art-body"><div class="art-cat">महिला जगत</div><div class="art-title">प्रवासी महिला: घर, काम और सपनों के बीच</div><div class="art-excerpt">क़तर में भारतीय महिलाओं की जीवनयात्रा...</div><div class="art-meta"><span>सुमन वर्मा</span><span>7 मि॰</span></div></div></div>
+    <div class="art-card"><div class="art-thumb bg-lav">🎵</div><div class="art-body"><div class="art-cat">संगीत</div><div class="art-title">रेगिस्तान में रागदारी: क़तर के भारतीय संगीतकार</div><div class="art-excerpt">शास्त्रीय संगीत की धुनें अरब की खाड़ी में गूँज रही हैं...</div><div class="art-meta"><span>मनोज शुक्ला</span><span>4 मि॰</span></div></div></div>
+    <div class="art-card"><div class="art-thumb bg-sage">🌿</div><div class="art-body"><div class="art-cat">स्वास्थ्य</div><div class="art-title">क़तर की गर्मी में आयुर्वेद: स्वास्थ्य के प्राचीन नुस्खे</div><div class="art-excerpt">आयुर्वेदिक चिकित्सा को अपनाने वाले प्रवासी भारतीय...</div><div class="art-meta"><span>डॉ. रेखा जोशी</span><span>8 मि॰</span></div></div></div>
+    <div class="art-card"><div class="art-thumb bg-rose">🏏</div><div class="art-body"><div class="art-cat">खेल</div><div class="art-title">FIFA के बाद क़तर: भारतीय खिलाड़ियों की नज़र से</div><div class="art-excerpt">विश्व कप की यादें और क़तर के खेल जगत का बदलता चेहरा...</div><div class="art-meta"><span>अमित तिवारी</span><span>5 मि॰</span></div></div></div>
+  </div>
+
+  <!-- ★ EDITOR STRIP — संपूर्ण संपादकीय मंडल हस्ताक्षर -->
+  <div class="editor-strip">
+    <div class="editor-inner">
+      <div class="editor-avatar">श</div>
+      <div class="editor-quote">
+        <div class="qt">नवचेतना केवल एक पत्रिका नहीं, यह प्रवासी भारतीयों की आत्मा की आवाज़ है। हर अंक में हम अपनी भाषा, अपनी संस्कृति और अपने सपनों को जीवित रखते हैं।</div>
+        <div class="sig-block">
+          <div class="sig-main">— श्रीमती शालिनी वर्मा &nbsp;|&nbsp; मुख्य संपादक</div>
+          <div class="sig-row" style="font-size:11px;color:var(--text-light);margin-top:2px;">नवचेतना अंतर्राष्ट्रीय पत्रिका, क़तर</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="sec-header" style="padding:0;margin-bottom:1rem;"><h2>विचार मंच</h2><a>सभी →</a></div>
+      <div class="opinion-list">
+        <div class="op-item"><div class="op-av">र</div><div><div class="op-name">राजेश कुमार शर्मा</div><div class="op-role">वरिष्ठ लेखक, दोहा</div><div class="op-title">हिंदी को बचाना है तो प्रवासी समाज को आगे आना होगा</div></div></div>
+        <div class="op-item"><div class="op-av">प</div><div><div class="op-name">पूजा अग्रवाल</div><div class="op-role">शिक्षिका एवं लेखिका</div><div class="op-title">दो देशों के बीच झूलते बच्चे: पहचान का संकट या वरदान?</div></div></div>
+        <div class="op-item"><div class="op-av">म</div><div><div class="op-name">मोहन लाल वर्मा</div><div class="op-role">अर्थशास्त्री</div><div class="op-title">क़तर विजन 2030 और भारतीय श्रमिकों का भविष्य</div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="newsletter"><h3>📬 न्यूज़लेटर</h3><p>नया अंक प्रकाशित होते ही सूचना पाएँ</p><input type="email" placeholder="आपका ईमेल पता"/><button>सदस्य बनें</button></div>
+      <div class="sidebar-block"><h3>📅 अगला अंक</h3><div style="text-align:center;padding:0.5rem 0;"><div style="font-size:1.8rem;margin-bottom:6px;">📅</div><div style="font-family:'Noto Serif Devanagari',serif;font-size:1rem;color:var(--text-dark);font-weight:600;">अप्रैल – जून २०२६</div><div style="font-size:12px;color:var(--text-light);margin-top:4px;">विशेष थीम: "प्रवासी महिला शक्ति"</div><button class="btn-primary" style="margin-top:12px;font-size:12px;padding:7px 20px;">लेख भेजें</button></div></div>
+      <div class="sidebar-block"><h3>🏷️ विषय</h3><div class="tag-cloud"><span class="tag">साहित्य</span><span class="tag">क़तर</span><span class="tag">प्रवासी</span><span class="tag">संस्कृति</span><span class="tag">महिला</span><span class="tag">कविता</span><span class="tag">शिक्षा</span><span class="tag">व्यंग्य</span><span class="tag">यात्रा</span><span class="tag">खाना</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ARCHIVE PAGE ══ -->
+<div id="page-archive" class="page">
+  <div class="archive-hero">
+    <h1>📚 पुराने अंकों का संग्रह</h1>
+    <p>२०१९ से अब तक के सभी अंक। अपना वर्ष चुनें और PDF डाउनलोड करें।</p>
+    <div class="archive-stats">
+      <div class="stat-pill"><span>6+</span> वर्ष</div>
+      <div class="stat-pill"><span>26+</span> अंक</div>
+      <div class="stat-pill"><span>500+</span> लेख</div>
+      <div class="stat-pill"><span>200+</span> लेखक</div>
+    </div>
+  </div>
+  <div class="guide-box">
+    <div class="guide-inner">
+      <h3>📂 नई PDF कैसे जोड़ें?</h3>
+      <div class="guide-steps">
+        <div class="guide-step"><div class="step-num">१</div><p><strong>pdfs</strong> फ़ोल्डर खोलें।</p><code>📁 pdfs/</code></div>
+        <div class="guide-step"><div class="step-num">२</div><p>सही वर्ष का फ़ोल्डर चुनें।</p><code>📁 pdfs/2023/</code></div>
+        <div class="guide-step"><div class="step-num">३</div><p>फ़ाइल नाम इस प्रकार रखें:</p><code>navachetna-2023-ank1.pdf</code></div>
+        <div class="guide-step"><div class="step-num">४</div><p>Netlify पर फ़ोल्डर अपलोड करें।</p><code>✅ बटन चालू!</code></div>
+      </div>
+    </div>
+  </div>
+  <div class="year-tabs">
+    <button class="ytab active" onclick="showYear('2026',this)">२०२६</button>
+    <button class="ytab" onclick="showYear('2025',this)">२०२५</button>
+    <button class="ytab" onclick="showYear('2024',this)">२०२४</button>
+    <button class="ytab" onclick="showYear('2023',this)">२०२३</button>
+    <button class="ytab" onclick="showYear('2022',this)">२०२२</button>
+    <button class="ytab" onclick="showYear('2021',this)">२०२१</button>
+    <button class="ytab" onclick="showYear('2020',this)">२०२०</button>
+    <button class="ytab" onclick="showYear('2019',this)">२०१९</button>
+  </div>
+
+  <div class="year-section visible" id="year-2026">
+    <h2>वर्ष २०२६ <span class="yr-badge">चालू वर्ष</span></h2>
+    <div class="issues-grid">
+      <div class="issue-card"><div class="issue-cover bg-lav"><div class="cover-num">१</div><div class="cover-label">जनवरी – मार्च<br/>२०२६</div><div class="cover-season">शीतकालीन अंक</div></div><div class="issue-info"><h4>प्रवासी भारतीय: नई पीढ़ी, नई सोच</h4><div class="issue-meta">अंक १ &nbsp;|&nbsp; जनवरी-मार्च २०२६</div><div class="pdf-status available">✅ PDF उपलब्ध है</div><div class="issue-actions"><a class="btn-dl" href="pdfs/2026/navachetna-2026-ank1.pdf" download>⬇ डाउनलोड</a><a class="btn-view" href="pdfs/2026/navachetna-2026-ank1.pdf" target="_blank">👁 देखें</a></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-sage"><div class="cover-num">२</div><div class="cover-label">अप्रैल – जून<br/>२०२६</div></div><div class="issue-info"><h4>विशेष: प्रवासी महिला शक्ति</h4><div class="issue-meta">अंक २ &nbsp;|&nbsp; शीघ्र प्रकाश्य</div><div class="badge-soon">📅 जुलाई २०२६ में उपलब्ध होगा</div></div></div>
+    </div>
+  </div>
+
+  <div class="year-section" id="year-2025">
+    <h2>वर्ष २०२५</h2>
+    <div class="issues-grid">
+      <div class="issue-card"><div class="issue-cover bg-rose"><div class="cover-num">१</div><div class="cover-label">जनवरी – मार्च<br/>२०२५</div></div><div class="issue-info"><h4>हिंदी: विश्व भाषा की ओर</h4><div class="issue-meta">अंक १ &nbsp;|&nbsp; जनवरी-मार्च २०२५</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2025-ank1.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-gold"><div class="cover-num">२</div><div class="cover-label">अप्रैल – जून<br/>२०२५</div></div><div class="issue-info"><h4>क़तर: खाड़ी में भारत</h4><div class="issue-meta">अंक २ &nbsp;|&nbsp; अप्रैल-जून २०२५</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2025-ank2.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-blue"><div class="cover-num">३</div><div class="cover-label">जुलाई – सितंबर<br/>२०२५</div></div><div class="issue-info"><h4>स्वतंत्रता और संस्कृति</h4><div class="issue-meta">अंक ३ &nbsp;|&nbsp; जुलाई-सितंबर २०२५</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2025-ank3.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-lav"><div class="cover-num">४</div><div class="cover-label">अक्टूबर – दिसंबर<br/>२०२५</div></div><div class="issue-info"><h4>वार्षिक विशेषांक २०२५</h4><div class="issue-meta">अंक ४ &nbsp;|&nbsp; अक्टूबर-दिसंबर २०२५</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2025-ank4.pdf</code></div></div></div>
+    </div>
+  </div>
+
+  <div class="year-section" id="year-2024">
+    <h2>वर्ष २०२४</h2>
+    <div class="issues-grid">
+      <div class="issue-card"><div class="issue-cover bg-sage"><div class="cover-num">१</div><div class="cover-label">जनवरी – मार्च<br/>२०२४</div></div><div class="issue-info"><h4>नारी: परिवर्तन की वाहक</h4><div class="issue-meta">अंक १ &nbsp;|&nbsp; जनवरी-मार्च २०२४</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2024-ank1.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-rose"><div class="cover-num">२</div><div class="cover-label">अप्रैल – जून<br/>२०२४</div></div><div class="issue-info"><h4>युवा और परंपरा</h4><div class="issue-meta">अंक २ &nbsp;|&nbsp; अप्रैल-जून २०२४</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2024-ank2.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-gold"><div class="cover-num">३</div><div class="cover-label">जुलाई – सितंबर<br/>२०२४</div></div><div class="issue-info"><h4>भारतीय पर्व विदेश में</h4><div class="issue-meta">अंक ३ &nbsp;|&nbsp; जुलाई-सितंबर २०२४</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2024-ank3.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-blue"><div class="cover-num">४</div><div class="cover-label">अक्टूबर – दिसंबर<br/>२०२४</div></div><div class="issue-info"><h4>वार्षिक साहित्य विशेष</h4><div class="issue-meta">अंक ४ &nbsp;|&nbsp; अक्टूबर-दिसंबर २०२४</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2024-ank4.pdf</code></div></div></div>
+    </div>
+  </div>
+
+  <div class="year-section" id="year-2023">
+    <h2>वर्ष २०२३</h2>
+    <div class="issues-grid">
+      <div class="issue-card"><div class="issue-cover bg-lav"><div class="cover-num">१</div><div class="cover-label">जनवरी – मार्च<br/>२०२३</div></div><div class="issue-info"><h4>प्रवास और प्रेम</h4><div class="issue-meta">अंक १ &nbsp;|&nbsp; जनवरी-मार्च २०२३</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2023-ank1.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-rose"><div class="cover-num">२</div><div class="cover-label">अप्रैल – जून<br/>२०२३</div></div><div class="issue-info"><h4>खाड़ी में कहानी</h4><div class="issue-meta">अंक २ &nbsp;|&nbsp; अप्रैल-जून २०२३</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2023-ank2.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-sage"><div class="cover-num">३</div><div class="cover-label">जुलाई – सितंबर<br/>२०२३</div></div><div class="issue-info"><h4>FIFA विश्व कप विशेषांक</h4><div class="issue-meta">अंक ३ &nbsp;|&nbsp; जुलाई-सितंबर २०२३</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2023-ank3.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-gold"><div class="cover-num">४</div><div class="cover-label">अक्टूबर – दिसंबर<br/>२०२३</div></div><div class="issue-info"><h4>वर्ष के सर्वश्रेष्ठ लेख</h4><div class="issue-meta">अंक ४ &nbsp;|&nbsp; अक्टूबर-दिसंबर २०२३</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2023-ank4.pdf</code></div></div></div>
+    </div>
+  </div>
+
+  <div class="year-section" id="year-2022">
+    <h2>वर्ष २०२२</h2>
+    <div class="issues-grid">
+      <div class="issue-card"><div class="issue-cover bg-blue"><div class="cover-num">१</div><div class="cover-label">जनवरी – मार्च<br/>२०२२</div></div><div class="issue-info"><h4>नई उम्मीद, नई शुरुआत</h4><div class="issue-meta">अंक १ &nbsp;|&nbsp; जनवरी-मार्च २०२२</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2022-ank1.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-lav"><div class="cover-num">२</div><div class="cover-label">अप्रैल – जून<br/>२०२२</div></div><div class="issue-info"><h4>संगीत और काव्य</h4><div class="issue-meta">अंक २ &nbsp;|&nbsp; अप्रैल-जून २०२२</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2022-ank2.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-rose"><div class="cover-num">३</div><div class="cover-label">जुलाई – सितंबर<br/>२०२२</div></div><div class="issue-info"><h4>प्रवासी संस्कृति</h4><div class="issue-meta">अंक ३ &nbsp;|&nbsp; जुलाई-सितंबर २०२२</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2022-ank3.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-sage"><div class="cover-num">४</div><div class="cover-label">अक्टूबर – दिसंबर<br/>२०२२</div></div><div class="issue-info"><h4>वार्षिक विशेषांक</h4><div class="issue-meta">अंक ४ &nbsp;|&nbsp; अक्टूबर-दिसंबर २०२२</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2022-ank4.pdf</code></div></div></div>
+    </div>
+  </div>
+
+  <div class="year-section" id="year-2021">
+    <h2>वर्ष २०२१</h2>
+    <div class="issues-grid">
+      <div class="issue-card">
+        <div class="issue-cover bg-rose"><div class="cover-num">१</div><div class="cover-label">महिला दिवस व<br/>होली विशेषांक</div><div class="cover-season">मार्च २०२१</div></div>
+        <div class="issue-info"><h4>महिला दिवस और होली विशेषांक</h4><div class="issue-meta">वर्ष २, अंक १ &nbsp;|&nbsp; मार्च २०२१</div><div style="font-size:10.5px;color:var(--text-light);margin-bottom:7px;">कविताएँ · कहानी · समीक्षा · स्वाद की बातें</div><div class="pdf-status available">✅ PDF उपलब्ध है</div><div class="issue-actions"><a class="btn-dl" href="pdfs/2021/navachetna-2021-ank1.pdf" download>⬇ डाउनलोड</a><a class="btn-view" href="pdfs/2021/navachetna-2021-ank1.pdf" target="_blank">👁 देखें</a></div></div>
+      </div>
+      <div class="issue-card"><div class="issue-cover bg-blue"><div class="cover-num">२</div><div class="cover-label">अप्रैल – जून<br/>२०२१</div></div><div class="issue-info"><h4>द्वितीय अंक — २०२१</h4><div class="issue-meta">अंक २ &nbsp;|&nbsp; अप्रैल-जून २०२१</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2021-ank2.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-lav"><div class="cover-num">३</div><div class="cover-label">मानसून विशेषांक<br/>जुलाई २०२१</div></div><div class="issue-info"><h4>मानसून विशेषांक — जुलाई २०२१</h4><div class="issue-meta">वर्ष २, अंक ३ &nbsp;|&nbsp; जुलाई २०२१</div><div class="pdf-status available">✅ PDF उपलब्ध है</div><div class="issue-actions"><a class="btn-dl" style="background:var(--slate);cursor:not-allowed;" title="PDF जल्द उपलब्ध होगी">⬇ जल्द आएगी</a><a class="btn-view" style="cursor:not-allowed;opacity:0.5;">👁 जल्द</a></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-sage"><div class="cover-num">४</div><div class="cover-label">अतुल्य भारत<br/>दिसंबर २०२१</div></div><div class="issue-info"><h4>अतुल्य भारत विशेषांक — दिसंबर २०२१</h4><div class="issue-meta">वर्ष २, अंक ४ &nbsp;|&nbsp; दिसंबर २०२१</div><div class="pdf-status available">✅ PDF उपलब्ध है</div><div class="issue-actions"><a class="btn-dl" style="background:var(--slate);cursor:not-allowed;" title="PDF जल्द उपलब्ध होगी">⬇ जल्द आएगी</a><a class="btn-view" style="cursor:not-allowed;opacity:0.5;">👁 जल्द</a></div></div></div>
+    </div>
+  </div>
+
+  <div class="year-section" id="year-2020">
+    <h2>वर्ष २०२०</h2>
+    <div class="issues-grid">
+      <div class="issue-card">
+        <div class="issue-cover bg-gold"><div class="cover-num">१</div><div class="cover-label">प्रवेशांक<br/>दिसंबर २०२०</div><div class="cover-season">✦ प्रथम अंक ✦</div></div>
+        <div class="issue-info"><h4>प्रवेशांक — दोहा से प्रथम त्रैमासिक ई-पत्रिका</h4><div class="issue-meta">अंक १ &nbsp;|&nbsp; ३३ पृष्ठ &nbsp;|&nbsp; दिसंबर २०२०</div><div style="font-size:10.5px;color:var(--text-light);margin-bottom:7px;">बाल कविताएँ · कहानियाँ · लघुकथाएँ · आलेख</div><div class="pdf-status available">✅ PDF उपलब्ध है</div><div class="issue-actions"><a class="btn-dl" href="pdfs/2020/navachetna-2020-ank1.pdf" download>⬇ डाउनलोड</a><a class="btn-view" href="pdfs/2020/navachetna-2020-ank1.pdf" target="_blank">👁 देखें</a></div></div>
+      </div>
+      <div class="issue-card"><div class="issue-cover bg-rose"><div class="cover-num">२</div><div class="cover-label">अप्रैल – जून<br/>२०२०</div></div><div class="issue-info"><h4>द्वितीय अंक — २०२०</h4><div class="issue-meta">अंक २ &nbsp;|&nbsp; अप्रैल-जून २०२०</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2020-ank2.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-blue"><div class="cover-num">३</div><div class="cover-label">जुलाई – सितंबर<br/>२०२०</div></div><div class="issue-info"><h4>तृतीय अंक — २०२०</h4><div class="issue-meta">अंक ३ &nbsp;|&nbsp; जुलाई-सितंबर २०२०</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2020-ank3.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-lav"><div class="cover-num">४</div><div class="cover-label">अक्टूबर – दिसंबर<br/>२०२०</div></div><div class="issue-info"><h4>चतुर्थ अंक — २०२०</h4><div class="issue-meta">अंक ४ &nbsp;|&nbsp; अक्टूबर-दिसंबर २०२०</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2020-ank4.pdf</code></div></div></div>
+    </div>
+  </div>
+
+  <div class="year-section" id="year-2019">
+    <h2>वर्ष २०१९ <span class="yr-badge" style="background:var(--gold-ornate);">स्थापना वर्ष</span></h2>
+    <div class="issues-grid">
+      <div class="issue-card"><div class="issue-cover bg-rose"><div class="cover-num">१</div><div class="cover-label">प्रथम अंक<br/>२०१९</div><div class="cover-season">स्थापना अंक</div></div><div class="issue-info"><h4>नवचेतना की नई शुरुआत</h4><div class="issue-meta">प्रथम अंक &nbsp;|&nbsp; २०१९</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2019-ank1.pdf</code></div></div></div>
+      <div class="issue-card"><div class="issue-cover bg-sage"><div class="cover-num">२</div><div class="cover-label">द्वितीय अंक<br/>२०१९</div></div><div class="issue-info"><h4>प्रवासी जीवन की कहानियाँ</h4><div class="issue-meta">अंक २ &nbsp;|&nbsp; २०१९</div><div class="pdf-status missing">📂 PDF अपलोड करें:<br/><code>navachetna-2019-ank2.pdf</code></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ABOUT PAGE ══ -->
+<div id="page-about" class="page">
+  <div class="about-wrap">
+    <div class="about-card">
+      <h2>✦ हमारे बारे में</h2>
+      <p><strong>नवचेतना अंतर्राष्ट्रीय पत्रिका</strong> क़तर से प्रकाशित होने वाली हिंदी त्रैमासिक पत्रिका है। वर्ष २०१९ में स्थापित यह पत्रिका खाड़ी देशों में बसे भारतीय समुदाय की साहित्यिक, सांस्कृतिक और सामाजिक आवाज़ है।</p>
+      <p>हर तीन महीने में प्रकाशित होने वाले हमारे अंकों में साहित्य, संस्कृति, महिला जगत, युवा मंच और प्रवासी जीवन से जुड़े विविध विषयों पर गहन सामग्री होती है।</p>
+    </div>
+
+    <!-- ★ संपादकीय मंडल — पूरी टीम -->
+    <div class="about-card">
+      <h2>✦ संपादकीय मंडल</h2>
+      <div class="team-grid">
+
+        <!-- मुख्य संपादक — विशेष कार्ड -->
+        <div class="team-card" style="border:2px solid var(--gold-ornate);background:linear-gradient(135deg,var(--pastel-gold),#FDF5E0);">
+          <div class="team-av" style="background:var(--white);border-color:var(--gold-ornate);width:64px;height:64px;font-size:1.5rem;">श</div>
+          <div class="team-name" style="font-size:13.5px;">श्रीमती शालिनी वर्मा</div>
+          <div class="team-role" style="color:var(--accent);font-weight:600;font-size:11.5px;">🏅 मुख्य संपादक</div>
+        </div>
+
+        <!-- सह संपादक १ -->
+        <div class="team-card">
+          <div class="team-av" style="background:var(--pastel-rose);">सु</div>
+          <div class="team-name">सुषमा रजनीश</div>
+          <div class="team-role">✍️ सह संपादक</div>
+        </div>
+
+        <!-- सह संपादक २ -->
+        <div class="team-card">
+          <div class="team-av" style="background:var(--pastel-blue);">मि</div>
+          <div class="team-name">मिताली पांडे</div>
+          <div class="team-role">✍️ सह संपादक</div>
+        </div>
+
+        <!-- मार्गदर्शक -->
+        <div class="team-card">
+          <div class="team-av" style="background:var(--pastel-lav);">सी</div>
+          <div class="team-name">डॉ. सीमा शर्मा</div>
+          <div class="team-role">🌟 मार्गदर्शन</div>
+        </div>
+
+        <!-- विशेष सहयोगी -->
+        <div class="team-card">
+          <div class="team-av" style="background:var(--pastel-sage);">अ</div>
+          <div class="team-name">श्री अजय वर्मा</div>
+          <div class="team-role">🤝 विशेष सहयोगी</div>
+        </div>
+
+      </div>
+
+      <!-- सारांश पट्टी -->
+      <div class="team-summary">
+        <div class="tsrow">
+          <div><strong>🏅 मुख्य संपादक</strong>श्रीमती शालिनी वर्मा</div>
+          <div><strong>✍️ सह संपादक</strong>सुषमा रजनीश &nbsp;·&nbsp; मिताली पांडे</div>
+          <div><strong>🌟 मार्गदर्शन</strong>डॉ. सीमा शर्मा</div>
+          <div><strong>🤝 विशेष सहयोग</strong>श्री अजय वर्मा</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-card">
+      <h2>✦ संपर्क करें</h2>
+      <p>📍 दोहा, क़तर &nbsp;|&nbsp; 📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="650b0413060d00110b041511170c0e04250208040c094b060a08">[email&#160;protected]</a> &nbsp;|&nbsp; 📞 +9181143014</p>
+      <p style="margin-top:8px;">लेख भेजने के लिए: <strong><a href="/cdn-cgi/l/email-protection#e08e8196838885948e81909492898b81a0878d81898cce838f8d"><span class="__cf_email__" data-cfemail="37595641545f524359564743455e5c5677505a565e5b1954585a">[email&#160;protected]</span></a></strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- ★ FOOTER — पूरी टीम -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2>नवचेतना</h2>
+        <p>क़तर से प्रकाशित हिंदी त्रैमासिक पत्रिका।</p>
+        <p>प्रवासी भारतीयों की भाषा, संस्कृति और आत्मा को समर्पित।</p>
+        <p style="margin-top:8px;"><strong>मुख्य संपादक:</strong> शालिनी वर्मा</p>
+        <p style="margin-top:6px;font-size:10.5px;color:#4A5A6A;">स्थापना: २०१९ &nbsp;|&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e28c8394818a87968c839296908b8983a2858f838b8ecc818d8f">[email&#160;protected]</a> &nbsp;|&nbsp; +9181143014</p>
+      </div>
+      <div class="footer-col">
+        <h4>विभाग</h4>
+        <a>साहित्य</a><a>संस्कृति</a><a>प्रवासी मंच</a><a>महिला जगत</a><a>युवा</a>
+      </div>
+      <div class="footer-col">
+        <h4>पत्रिका</h4>
+        <a onclick="showPage('about')">हमारे बारे में</a>
+        <a onclick="showPage('archive')">पुराने अंक</a>
+        <a>लेख भेजें</a><a>विज्ञापन</a><a>संपर्क</a>
+      </div>
+      <div class="footer-col">
+        <h4>पाठक सेवा</h4>
+        <a>सदस्यता</a><a>न्यूज़लेटर</a><a>PDF डाउनलोड</a><a>सुझाव</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© २०२६ नवचेतना अंतर्राष्ट्रीय पत्रिका, क़तर। सर�

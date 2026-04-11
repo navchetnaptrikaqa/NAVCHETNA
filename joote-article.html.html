@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>जूते — तिवारी अनुराग प्रेमचंद | नवचेतना पत्रिका</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1209;
+    --paper: #f5f0e8;
+    --saffron: #c8620a;
+    --gold: #b8922a;
+    --muted: #7a6a55;
+    --border: #d6c9b0;
+    --cream: #ede7d9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Tiro Devanagari Hindi', serif;
+    line-height: 1.9;
+    min-height: 100vh;
+  }
+
+  /* Texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  /* Header */
+  .site-header {
+    border-bottom: 2px solid var(--saffron);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--paper);
+    position: relative;
+    z-index: 10;
+  }
+
+  .site-logo {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .site-logo span {
+    display: block;
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--saffron);
+    text-transform: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--saffron); }
+
+  /* Decorative top strip */
+  .ornament-strip {
+    height: 4px;
+    background: linear-gradient(90deg, var(--saffron), var(--gold), var(--saffron));
+  }
+
+  /* Article container */
+  .article-wrapper {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Category tag */
+  .category-tag {
+    display: inline-block;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    border: 1px solid var(--saffron);
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+
+  /* Title */
+  .article-title {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* Ornamental divider */
+  .title-ornament {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+
+  .title-ornament::before,
+  .title-ornament::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .title-ornament-symbol {
+    color: var(--gold);
+    font-size: 1.2rem;
+  }
+
+  /* Author block */
+  .author-block {
+    background: var(--cream);
+    border-left: 3px solid var(--saffron);
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .author-name {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .author-details {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  /* Drop cap */
+  .article-body p:first-of-type::first-letter {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 4.5rem;
+    line-height: 0.85;
+    float: left;
+    margin-right: 0.1em;
+    margin-top: 0.05em;
+    color: var(--saffron);
+    font-weight: 400;
+  }
+
+  /* Body text */
+  .article-body p {
+    font-size: 1.15rem;
+    line-height: 2;
+    color: #2a1f10;
+    margin-bottom: 1.8rem;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  /* Pull quote */
+  .pull-quote {
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    padding: 1.8rem 2rem;
+    margin: 3rem -1rem;
+    text-align: center;
+  }
+
+  .pull-quote p {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.4rem !important;
+    line-height: 1.7 !important;
+    color: var(--saffron) !important;
+    font-style: italic;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+
+  /* Footer */
+  .article-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .issue-info {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .back-link {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 0.9rem;
+    color: var(--saffron);
+    text-decoration: none;
+    border-bottom: 1px solid var(--saffron);
+    padding-bottom: 2px;
+    transition: opacity 0.2s;
+  }
+
+  .back-link:hover { opacity: 0.7; }
+
+  /* Site footer */
+  .site-footer {
+    background: var(--ink);
+    color: var(--border);
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .site-footer a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  /* Animations */
+  .article-wrapper {
+    animation: fadeUp 0.8s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .site-header { flex-direction: column; gap: 1rem; text-align: center; }
+    .nav-links { gap: 1rem; }
+    .article-wrapper { padding: 2rem 1.2rem 4rem; }
+    .pull-quote { margin: 2rem 0; }
+    .article-title { font-size: 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ornament-strip"></div>
+
+<header class="site-header">
+  <a href="https://navchetnapatrika.com/" class="site-logo">
+    <span>नवचेतना</span>
+    Navchetna International Patrika · Qatar
+  </a>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="https://navchetnapatrika.com/">मुख्य पृष्ठ</a></li>
+      <li><a href="https://navchetnapatrika.com/#archive">पुराने अंक</a></li>
+      <li><a href="https://navchetnapatrika.com/#contact">संपर्क</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="article-wrapper">
+
+  <div class="category-tag">✍️ आलेख · साहित्य</div>
+
+  <h1 class="article-title">जूते</h1>
+
+  <div class="title-ornament">
+    <span class="title-ornament-symbol">✦</span>
+  </div>
+
+  <div class="author-block" style="display:flex;align-items:center;gap:1.5rem;">
+    <img src="data:image/png;base64,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" alt="तिवारी अनुराग प्रेमचंद" style="width:90px;height:90px;object-fit:cover;border-radius:50%;border:3px solid var(--saffron);flex-shrink:0;">
+    <div>
+    <div class="author-name">तिवारी अनुराग प्रेमचंद</div>
+    <div class="author-details">
+      शोध छात्र, हिंदी विभाग<br>
+      महाराजा सयाजीराव विश्वविद्यालय, बड़ौदा
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <p>फर्श पर टक-टक करते बाबूजी के जूते मूक चहारदिवारी में एकमात्र जीवंत प्राणी थे, जिनकी सेवा देखने से अंदाजा लगाया जा सकता था कि बाबूजी के हृदय में जूतों के प्रति कितनी आत्मीयता थी। वे सिर्फ जूते नहीं थे। दफ्तर से घर तक पिताजी के अस्तित्व का प्रमाणपत्र थे, जिसके टक-टक की आवाज उनके आने की पूर्व सूचना दे जाते थे। कई बार लगता बाबूजी उसे किसी आयुर्वेदिक काढ़े से तो नहीं सींच रहे, बिलकुल चमकता, चुस्त और तरुण, किसी बादशाह के जूते की तरह पैरों में शोभायमान होते और जहाँ से गुजरते वहीं अपना रोब छोड़ जाते।</p>
+
+    <p>वैसे उनके दफ्तर से लौटने का समय तयशुदा हुआ करता था। उनके लौटते ही हम किसी सर्कस के जोकर की तरह सारे कार्य बड़ी सटीकता से करने का अभिनय किया करते थे। दुर्भाग्यवश किसी रोज वे जल्दी लौटते तो उन्हें ऊपर वाले कमरे से चक्कलस की आती तेज आवाज़ परेशान किया करती। शोरगुल के बवंडर को लकड़ी के जीने से ऊपर चढ़ते उनके जूते की आहट क्षण भर में समाप्त कर दिया करते थे और हम कूद जाया करते प्लासी से लेकर बक्सर तक के युद्ध को समाप्त करने में।</p>
+
+    <p>जब कभी हमारी नाटकीयता पर उन्हें संदेह होता तो वे स्वयं परीक्षा लेने आते। इधर-उधर के दो-चार प्रश्न कर सीधा गणित के सवाल पूछना शुरू करते। गलती से सारे उत्तर दे दिए तो पंद्रह से ऊपर के पहाड़े पूछे जाते, वह भी सिर्फ मुझसे। मेरा झुका हुआ सर देखकर वे समझ जाते और हीनता भरी झिड़क देकर कठोरता से अर्जित अपनी पौरुषता की असहनीय गाथा सुनाया करते थे।</p>
+
+    <div class="pull-quote">
+      <p>"नए जूते में चेहरा नज़र आता था और पुराने जूते में चेहरे की झुर्रियाँ।"</p>
+    </div>
+
+    <p>बाबूजी के जूते सात बरस के हो गए। सच कहूँ तो किसी भी सामान्य मनुष्य के लिए ऐसे जूते की कल्पना करना अतिश्योक्ति हो सकती है, किंतु मेरे लिए नहीं। धीरे-धीरे बाबूजी के जूते किसी खंडहर मकान के ढहते ढाँचे जैसे बन गए थे। इनमें आगे की तरफ एक टूटी-फूटी खिड़की थी और पिछले हिस्से का उतरता रंग-रोगन ढाल-सी मजबूत दीवार को शनै-शनै कमजोर बनाता जा रहा था।</p>
+
+    <p>पंडित रमाशंकर त्रिपाठी के जूते को सिर्फ मामूली जूते समझना उनके जीवन के अहम हिस्से को काट देने जैसा मामला था। जीवन के हर महत्वपूर्ण मोड़ पर जूते शामिल हो ही जाते थे, सौभाग्य से मैं इसका प्रत्यक्ष साक्षी भी रहा। इंटर की छमाही परीक्षा में भौतिक विज्ञान के प्रश्नों को हल करने के लिए पर्चा बना कर ले गया था। मेरा दुर्भाग्य रहा विद्यालय के सबसे निर्दयी मास्टर ही हमारे कमरे में आए।</p>
+
+    <p>परीक्षा शुरू होने के कुछ ही समय में मास्टर साहब ने आस्तीन में छुपाए पर्चे को देख लिया और तुरंत ही परीक्षा भवन के बाहर करते हुए प्रधानाचार्य के कक्ष में खड़ा कर दिया। इससे भी बड़ा दुर्भाग्य रहा कि प्रधानाचार्य को उनके कमरे की खिड़की से पिताजी का दैविक भौतिक ढाँचा अनायास ही दिखाई पड़ा। वे पास की बस्ती में किसी सरकारी काज से आए थे और प्रधानाचार्य की नजर जैसे ही उन पर पड़ी बिना समय गँवाए, चपरासी से कह पंडित जी को बुलवा लिया।</p>
+
+    <p>उनके कमरे में दाखिल होते ही मेरे चेहरे की हवाइयाँ उड़ गई, बस लगता था कि धरती फट जाए और मैं उसमें समा जाऊँ। हाथ-पैर काँप रहे थे, माघ के महीने में माथे पर पसीना आ गया। "अरे लेखपाल साहब आपकी ईमानदारी की तो पाँच गाँव कसमें खाता फिरता है और आपका लड़का। घोर कलियुग, जी पूछिए मत।"</p>
+
+    <p>इतना सुनने के बाद बाबूजी के जूते हवाओं को चीरते हुए बिना कुछ कहे प्रधानाचार्य के कमरे से बाहर निकल गए। हाथ जोड़ने भर की औपचारिकता भी आवेश में आने से जूते ने नहीं दी। मैं भी जूते की गंध का पीछा करते-करते पूरे सामर्थ्य के साथ घर पहुँचा और पलंग के पास विश्राम कर रहे जूते में सर गड़ाकर पूरी हिम्मत के साथ एक प्रवाह में सारी बात बता दी और गलती के लिए माफी माँगी। उस दिन पहली बार 'लोहे को लोहा' ही काटता है, यह मुहावरा समझ आया।</p>
+
+    <p>बाबूजी को जूते इतने प्रिय थे कि उन्होंने पूजा घर और रसोई घर ऊपरी मंजिल पर स्थानांतरित करवा दिया ताकि बिना किसी धार्मिक रुकावट के उनके जूते सीधे पलंग के पास तक चलकर आए। इतवार की दोपहर जब दीदी बाबूजी को भोजन परोसने आई तो थोड़ी-सी हड़बड़ाहट के चलते दाल की कटोरी के छलकने से कुछ छींटे जूते पर आ गिरी। फिर क्या था? बाबूजी के हृदय में उपजे क्रोध की अग्नि में दीदी की सौम्यता भस्म हो गई।</p>
+
+    <p>बाबूजी सिर्फ पैरों में ही नहीं अपनी जबान पर भी जूते रखते थे और जहाँ जैसी जरूरत पड़ती, भिगो कर मार दिया करते। दो बरस पहले मामा हरिनारायण पत्नी के साथ प्रयाग जी के पावन दर्शन हेतु आए थे। सोचा था बहन के घर सराय मिल जाएगा और बहन-बहनोई से मुलाकात भी हो जाएगी। उन्हें क्या पता था यही मुलाकात आखिरी होगी।</p>
+
+    <p>हमेशा की तरह बाबूजी ने किसी पालतू जानवर की तरह जूते को पयताने के करीब निकाल रखा था। कमरे का परदा हटाकर उत्सुकतावश हरिनारायण जी पूरे उमंग के साथ पिताजी के कमरे की ओर बढ़े और चरण छूकर अनंत जन्मों का पुण्य प्राप्त करने के क्रम में अपने चप्पल से जूते पर चढ़ाई की। इस अचानक हुए हमले में जूते नेस्तनाबूद कर दिए गए। बस फिर क्या था? जो सजा देश द्रोह की, वही जूता द्रोह की।</p>
+
+    <div class="pull-quote">
+      <p>"साले साहब कम हो तो चार जूते घर भी लेते जाइएगा, मेरी तरफ से। संकोच न करिएगा, पाहुन हमारे घर से खाली हाथ नहीं जाते।"</p>
+    </div>
+
+    <p>उस शाम माँ बिना कुछ कहे बिस्तर पर पड़ी रही। बस सिसकियों की आवाज आ रही थी। नियमित समय पर ब्यालू कर लेने वाले पिताजी भी रेडियो की धीमी आवाज में समाचार सुन रहे थे। किंतु घर में छाए सन्नाटे को तोड़ते हुए पंडित जी आधी रात को अपने कमरे से निकल उपरी मंजिल की ओर बढ़े। यह शायद पहली बार था, जब टक-टक की जगह बाबूजी के नरम पैरों की थाप सुनाई दे रही थी। बाबूजी इस बार सिर्फ जूते नहीं बल्कि अपने अहम को छोड़ ऊपरी मंजिल की ओर बढ़ रहे थे।</p>
+
+    <p>कमरे में आकर बाबूजी ने देखा माँ कोने में बिछी चटाई पर दुबकी हुई है। पास रखी कुर्सी को खींच धीरे से माँ के सिरहाने बैठे, और हल्की आवाज में उनसे भोजन करने का आग्रह किया। ठंडी आह भरते हुए बाबूजी ने कहा, "जानकी मैं जानता हूँ कि मेरे शब्दों से अधिक चोट तुम्हें उस विश्वास के टूटने की हुई है... मैंने तुम्हारी वह स्वतंत्रता भी छीन ली।"</p>
+
+    <p>"पहली बार जीवन जीने की आस जूते को देखकर हुई। जब से कलेक्टर के जूते देखे थे तब से आँखों में एक अलग चमक थी। अपनी निजी बचत लगाकर घर की सबसे महँगी चीजों में से एक यह जूते मैंने खरीदे। मेरे अंतर्मन में नया आत्मविश्वास आ गया था। इन्हें पहनकर मैं पहली बार रोया, खूब रोया, जी भर कर रोया। मुझे इंसान होने का आत्मबोध हुआ। यह सिर्फ जूते नहीं है: मेरा संबल है, मेरा आत्मविश्वास है, मेरी दृढ़ता का आधार है।" अंधेरे में बाबूजी का एकालाप थम-सा गया।</p>
+
+    <p>सब कुछ सुन रही माँ अचानक से उठी और सब भोजन की एक थाल पिताजी की ओर कर दूसरी थाल में खुद भोजन करने से पहले हमें भोजन करने का इशारा कर दिया। वातावरण की शांति तो बरकरार रही लेकिन फिर भी हल्कापन महसूस हो रहा था।</p>
+
+    <p><strong>आज न बाबूजी है न उनके जूते, केवल उस जूते का रोब जिंदा है।</strong></p>
+
+  </div>
+  </div>
+
+  <div class="title-ornament" style="margin-top: 3rem;">
+    <span class="title-ornament-symbol">✦</span>
+  </div>
+
+  <footer class="article-footer">
+    <div class="issue-info">
+      नवचेतना अंतर्राष्ट्रीय पत्रिका, क़तर &nbsp;·&nbsp; वर्ष ७, अंक १ — जनवरी-मार्च २०२६
+    </div>
+    <a href="https://navchetnapatrika.com/" class="back-link">← मुख्य पृष्ठ पर जाएँ</a>
+  </footer>
+
+</main>
+
+<footer class="site-footer">
+  © २०२६ नवचेतना अंतर्राष्ट्रीय पत्रिका, क़तर &nbsp;·&nbsp;
+  <a href="/cdn-cgi/l/email-protection#137d7265707b76677d72637267617a787253747e727a7f3d707c7e"><span cla
