@@ -1,0 +1,83 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: 'en'
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+
+  - name: "articles"
+    label: "✍️ लेख (Articles)"
+    folder: "content/articles"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "शीर्षक (Title)", name: "title", widget: "string", hint: "लेख का शीर्षक लिखें" }
+      - { label: "लेखक (Author)", name: "author", widget: "string", hint: "लेखक का पूरा नाम" }
+      - label: "विभाग (Category)"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "साहित्य", value: "sahitya" }
+          - { label: "संस्कृति", value: "sanskriti" }
+          - { label: "महिला जगत", value: "mahila" }
+          - { label: "युवा", value: "yuva" }
+          - { label: "क़तर डायरी", value: "qatar" }
+          - { label: "विचार मंच", value: "vichar" }
+          - { label: "स्वास्थ्य", value: "swasthya" }
+          - { label: "शिक्षा", value: "shiksha" }
+      - { label: "प्रकाशन तिथि (Date)", name: "date", widget: "datetime" }
+      - { label: "थंबनेल छवि (Thumbnail Image)", name: "thumbnail", widget: "image", required: false }
+      - { label: "संक्षिप्त विवरण (Short Description)", name: "description", widget: "text", hint: "2-3 lines summary shown on homepage" }
+      - { label: "सामग्री (Content)", name: "body", widget: "markdown" }
+      - { label: "प्रकाशित करें? (Published?)", name: "published", widget: "boolean", default: true }
+
+  - name: "issues"
+    label: "📚 अंक (Magazine Issues)"
+    folder: "content/issues"
+    create: true
+    fields:
+      - { label: "अंक शीर्षक (Issue Title)", name: "title", widget: "string" }
+      - { label: "वर्ष (Year)", name: "year", widget: "number" }
+      - label: "तिमाही (Quarter)"
+        name: "quarter"
+        widget: "select"
+        options:
+          - { label: "अंक १ — जनवरी–मार्च", value: "q1" }
+          - { label: "अंक २ — अप्रैल–जून", value: "q2" }
+          - { label: "अंक ३ — जुलाई–सितंबर", value: "q3" }
+          - { label: "अंक ४ — अक्टूबर–दिसंबर", value: "q4" }
+      - { label: "विशेष थीम (Special Theme)", name: "theme", widget: "string" }
+      - { label: "PDF फ़ाइल (Upload PDF)", name: "pdf", widget: "file", required: false }
+      - { label: "कवर छवि (Cover Image)", name: "cover", widget: "image", required: false }
+      - label: "स्थिति (Status)"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "✅ उपलब्ध", value: "available" }
+          - { label: "📅 शीघ्र प्रकाश्य", value: "upcoming" }
+          - { label: "📂 अपलोड करें", value: "pending" }
+
+  - name: "announcements"
+    label: "📢 सूचनाएँ (Announcements)"
+    folder: "content/announcements"
+    create: true
+    fields:
+      - { label: "शीर्षक (Title)", name: "title", widget: "string" }
+      - { label: "तिथि (Date)", name: "date", widget: "datetime" }
+      - { label: "सामग्री (Content)", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "⚙️ साइट सेटिंग्स (Site Settings)"
+    files:
+      - label: "मुख्य पृष्ठ (Homepage)"
+        name: "homepage"
+        file: "content/settings/homepage.md"
+        fields:
+          - { label: "मुख्य लेख शीर्षक", name: "hero_title", widget: "string" }
+          - { label: "मुख्य लेख विवरण", name: "hero_description", widget: "text" }
+          - { label: "अगला अंक थीम", name: "next_issue_theme", widget: "string" }
+          - { label: "अगला अंक तिथि", name: "next_issue_date", widget: "string" }
