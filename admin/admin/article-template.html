@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✏️ CHANGE THESE FOR EACH ARTICLE -->
+  <title>लेख का शीर्षक — नवचेतना पत्रिका</title>
+  <meta name="description" content="लेख का संक्षिप्त विवरण यहाँ लिखें" />
+
+  <!-- Open Graph (for Facebook/WhatsApp preview) -->
+  <meta property="og:type"        content="article" />
+  <meta property="og:site_name"   content="नवचेतना अंतर्राष्ट्रीय पत्रिका" />
+  <meta property="og:title"       content="लेख का शीर्षक" />
+  <meta property="og:description" content="लेख का संक्षिप्त विवरण" />
+  <meta property="og:image"       content="https://navchetnapatrika.com/images/uploads/article-thumbnail.jpg" />
+  <meta property="og:url"         content="https://navchetnapatrika.com/articles/article-slug" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="लेख का शीर्षक" />
+  <meta name="twitter:description" content="लेख का संक्षिप्त विवरण" />
+  <meta name="twitter:image"       content="https://navchetnapatrika.com/images/uploads/article-thumbnail.jpg" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans Devanagari', 'Mangal', Arial, sans-serif;
+      color: #1f2937;
+      background: #ffffff;
+      line-height: 1.8;
+    }
+
+    /* ── Article wrapper ── */
+    .article-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    .article-category {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .article-title {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: #111827;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-meta {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .article-meta span { display: flex; align-items: center; gap: 4px; }
+
+    .article-thumbnail {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      object-fit: cover;
+      max-height: 400px;
+    }
+
+    .article-body {
+      font-size: 17px;
+      line-height: 1.9;
+      color: #374151;
+    }
+
+    .article-body p  { margin-bottom: 1.25rem; }
+    .article-body h2 { font-size: 1.35rem; font-weight: 700; margin: 2rem 0 0.75rem; color: #111827; }
+    .article-body h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.5rem; color: #1f2937; }
+    .article-body blockquote {
+      border-left: 4px solid #f59e0b;
+      padding: 0.75rem 1.25rem;
+      background: #fffbeb;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: #92400e;
+    }
+
+    /* ── Share Section ── */
+    .share-section {
+      margin: 2.5rem 0 1.5rem;
+      padding: 1.5rem;
+      border-top: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .share-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0 0 12px 0;
+    }
+
+    .share-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s, opacity 0.15s;
+      font-family: inherit;
+    }
+
+    .share-btn:hover  { transform: translateY(-1px); opacity: 0.92; }
+    .share-btn:active { transform: translateY(0); }
+
+    .share-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    .share-btn.whatsapp  { background: #25D366; color: #fff; }
+    .share-btn.facebook  { background: #1877F2; color: #fff; }
+    .share-btn.twitter   { background: #000;    color: #fff; }
+    .share-btn.copy-link {
+      background: transparent;
+      color: #374151;
+      border: 1.5px solid #d1d5db;
+    }
+    .share-btn.copy-link:hover   { background: #f9fafb; }
+    .share-btn.copy-link.copied  { border-color: #16a34a; color: #16a34a; }
+
+    @media (max-width: 480px) {
+      .share-btn { flex: 1 1 calc(50% - 5px); justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<article class="article-container">
+
+  <!-- Category badge -->
+  <span class="article-category">साहित्य</span>  <!-- ✏️ Change category -->
+
+  <!-- Title -->
+  <h1 class="article-title">
+    प्रवासी भारतीयों की आवाज़: क़तर में हिंदी साहित्य  <!-- ✏️ Change title -->
+  </h1>
+
+  <!-- Author & Date -->
+  <div class="article-meta">
+    <span>✍️ शालिनी वर्मा</span>            <!-- ✏️ Change author -->
+    <span>📅 जनवरी–मार्च २०२६</span>        <!-- ✏️ Change date -->
+    <span>⏱ 8 मिनट पढ़ने का समय</span>
+  </div>
+
+  <!-- Thumbnail image -->
+  <img
+    class="article-thumbnail"
+    src="/images/uploads/article-thumbnail.jpg"   <!-- ✏️ Change image path -->
+    alt="लेख की छवि"
+  />
+
+  <!-- ✏️ ARTICLE CONTENT — replace with your article -->
+  <div class="article-body">
+    <p>जब घर से हज़ारों मील दूर, रेगिस्तान की रेत पर हिंदी के शब्द खिलते हैं — तो जन्म होता है एक अनोखी साहित्यिक संस्कृति का।</p>
+
+    <h2>प्रवास की पीड़ा और कविता</h2>
+    <p>यहाँ अपना लेख लिखें। आप इस हिस्से को अपनी सामग्री से बदलें।</p>
+
+    <blockquote>
+      "भाषा वह धागा है जो हमें अपनी जड़ों से जोड़े रखती है।"
+    </blockquote>
+
+    <p>और यहाँ लेख जारी रखें...</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SOCIAL SHARE BUTTONS — Do not remove
+       ═══════════════════════════════════════ -->
+  <div class="share-section">
+    <p class="share-label">इस लेख को साझा करें</p>
+    <div class="share-buttons">
+
+      <!-- WhatsApp -->
+      <a class="share-btn whatsapp" id="share-whatsapp" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.117 1.522 5.848L.057 23.885a.5.5 0 0 0 .611.612l6.037-1.465A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.519-5.22-1.42l-.374-.223-3.882.942.96-3.88-.244-.388A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+        </svg>
+        WhatsApp
+      </a>
+
+      <!-- Facebook -->
+      <a class="share-btn facebook" id="share-facebook" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+        Facebook
+      </a>
+
+      <!-- Twitter / X -->
+      <a class="share-btn twitter" id="share-twitter" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+        X / Twitter
+      </a>
+
+      <!-- Copy Link -->
+      <button class="share-btn copy-link" id="share-copy" onclick="copyArticleLink()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+        </svg>
+        <span id="copy-label">लिंक कॉपी करें</span>
+      </button>
+
+    </div>
+  </div>
+  <!-- ═══════════════════════════════════════ -->
+
+</article>
+
+<script>
+(function() {
+  var pageUrl   = encodeURIComponent(window.location.href);
+  var pageTitle = encodeURIComponent(document.title);
+
+  document.getElementById('share-whatsapp').href =
+    'https://wa.me/?text=' + pageTitle + '%20-%20' + pageUrl;
+
+  document.getElementById('share-facebook').href =
+    'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl;
+
+  document.getElementById('share-twitter').href =
+    'https://twitter.com/intent/tweet?text=' + pageTitle + '&url=' + pageUrl;
+})();
+
+function copyArticleLink() {
+  var btn   = document.getElementById('share-copy');
+  var label = document.getElementById('copy-label');
+  navigator.clipboard.writeText(window.location.href).then(function() {
+    btn.classList.add('copied');
+    label.textContent = '✓ कॉपी हो गया!';
+    setTimeout(function() {
+      btn.classList.remove('copied');
+      label.textContent = 'लिंक कॉपी करें';
+    }, 2500);
+  }).catch(function() {
+    var el = document.createElement('textarea');
+    el.value = window.location.href;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    label.textContent = '✓ कॉपी हो गया!';
+    setTimeout(function() { label.textContent = 'लिंक कॉपी करें'; }, 2500);
+  });
+}
+</script>
+
+</body>
+</html>
